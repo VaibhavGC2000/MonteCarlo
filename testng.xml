@@ -4,6 +4,16 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="testscripts.TC01_AddProductToCart"/>
+      <class name="testscripts.TC02_AddProductToWishlist"/>
+      <class name="testscripts.TC03_PincodeDelivery"/>
+      <class name="testscripts.TC04_Checkout"/>
+      <class name="testscripts.TC05_manufactureAddress"/>
+      <class name="testscripts.TC06_AddAddress"/>
+      <class name="testscripts.TC07_DeleteAddress"/>
+      <class name="testscripts.TC08_VerifyPopup"/>
+      <class name="testscripts.TC09_AddToWishlistAndCart"/>
+      <class name="testscripts.TC10_ProductVerification"/>
+      <class name="testscripts.TC11_SuggesstionBangalore"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

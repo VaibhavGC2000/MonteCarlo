@@ -7,12 +7,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import genericLibraries.WebDriverUtilities;
+
 public class OurStorePage {
 	@FindBy(id = "searchInput")
 	private WebElement searchInputBox;
 
 	@FindBy(xpath = "//div[@class='store-card']")
-		private List<WebElement> addressList;
+	private List<WebElement> addressList;
 
 	@FindBy(xpath = "//a[normalize-space()='Get Directions']")
 	private WebElement clickGetDirectionBtn;
@@ -29,7 +31,8 @@ public class OurStorePage {
 		return addressList.size() == 1;
 	}
 
-	public void clickGetDirectionBtn() {
+	public void clickGetDirectionBtn(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementClick(clickGetDirectionBtn, driver);
 		clickGetDirectionBtn.click();
 	}
 

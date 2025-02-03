@@ -6,7 +6,6 @@
       <class name="testscripts.TC01_AddProductToCart">
         <methods>
           <include name="openApp"/>
-          <include name="closeApp"/>
           <include name="addToCart"/>
         </methods>
       </class> <!-- testscripts.TC01_AddProductToCart -->

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import genericLibraries.WebDriverUtilities;
+
 public class Header {
 
 	@FindBy(xpath = "//li[@class='wishlist']//a")

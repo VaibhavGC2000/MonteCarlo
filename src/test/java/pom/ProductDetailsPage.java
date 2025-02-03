@@ -2,10 +2,14 @@ package pom;
 
 import java.util.List;
 
+import org.apache.poi.hssf.eventusermodel.dummyrecord.LastCellOfRowDummyRecord;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import genericLibraries.DataUtilities;
+import genericLibraries.WebDriverUtilities;
 
 public class ProductDetailsPage {
 
@@ -50,11 +54,13 @@ public class ProductDetailsPage {
 		addToWishlist.click();
 	}
 
-	public WebElement getProductInfo() {
+	public WebElement getProductInfo(WebDriverUtilities webDriverUtilities,WebDriver driver) {
+		webDriverUtilities.waitElement(selectedProduct, driver);
 		return selectedProduct;
 	}
 
-	public void clickProductDetailsAndDescriptionBtn() {
+	public void clickProductDetailsAndDescriptionBtn(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementRefreshed(productDetailsAndDescriptionBtn, driver);
 		productDetailsAndDescriptionBtn.click();
 	}
 

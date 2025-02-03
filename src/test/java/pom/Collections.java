@@ -1,10 +1,14 @@
 package pom;
+
+import java.sql.Driver;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import genericLibraries.WebDriverUtilities;
 
 public class Collections {
 	@FindBy(xpath = "//div[@class='popover-container']/button") // button[@class='popover-button hidden-pocket']
@@ -69,16 +73,19 @@ public class Collections {
 		return allProducts.get(productIndex);
 	}
 
-	public void clickQuickViewBtn() {
-		quickViewBtn.get(1).click();
+	public WebElement getQuickViewBtn(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementClick(quickViewBtn.get(2), driver);
+		return quickViewBtn.get(2);
 	}
 
-	public void clickAddToCartBtn() {
-		addToCartBtn.click();
+	public WebElement getAddToCartBtn(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementClick(addToCartBtn, driver);
+		return addToCartBtn;
 	}
 
-	public void clickCloseCartBtn() {
-		closeCartBtn.click();
+	public WebElement getCloseCartBtn(WebDriverUtilities webDriverUtilities,WebDriver driver) {
+		webDriverUtilities.waitElementClick(closeCartBtn, driver);
+		return closeCartBtn;
 	}
 
 	public void clickOnStole() {

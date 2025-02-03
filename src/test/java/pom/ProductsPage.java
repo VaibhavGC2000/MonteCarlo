@@ -1,9 +1,14 @@
 package pom;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import genericLibraries.WebDriverUtilities;
 
 public class ProductsPage {
 
@@ -43,77 +48,120 @@ public class ProductsPage {
 	@FindBy(xpath = "//label[contains(text(),'In stock') or input[@class='checkbox']]")
 	private WebElement instockOption;
 
-	@FindBy(xpath = "(//div[@class='title-wish'])[1]")
-	private WebElement firstProduct;
+	@FindBy(xpath = "(//div[@class='title-wish'])")
+	private List<WebElement> productsList;
 
-	@FindBy(xpath = "(//product-item[@class=\"product-item  hhh Byee\"]//div[@class=\"product-item__info  text--small\"]//a)[3]")
-	private WebElement thirdProdut;
+
+	@FindBy(xpath = "//button[@class='popover-button hidden-pocket']")
+	private WebElement sortByBtn;
+
+	@FindBy(xpath = "//span[normalize-space()='Price, high to low']")
+	private WebElement highToLow;
+
+	@FindBy(xpath = "(//product-item[@class=\"product-item  hhh Byee\"]/div/a[@data-tippy-content=\"Add to Wishlist\"])")
+	private List<WebElement> addToWishList;
 
 	public ProductsPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
-	public WebElement getSize() {
+	public WebElement getSize(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElement(size, driver);
 		return size;
 	}
 
-	public WebElement selectSize() {
+	public WebElement selectSize(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementClick(sizeOption, driver);
 		return sizeOption;
 	}
 
-	public WebElement getColor() {
+	public WebElement getColor(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementRefreshed(color, driver);
 		return color;
 	}
 
-	public WebElement selectColor() {
+	public WebElement selectColor(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementRefreshed(colorOption, driver);
 		return colorOption;
 	}
 
-	public WebElement getBrand() {
-		return brand;
+	public void clickBrand(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElement(brand, driver);
+		brand.click();
 	}
 
-	public WebElement selectBrand() {
+	public WebElement selectBrand(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementClick(brandOption, driver);
 		return brandOption;
 	}
 
-	public WebElement getAvailability() {
+	public WebElement getAvailability(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElement(availability, driver);
 		return availability;
 	}
 
-	public WebElement selectAvailability() {
+	public WebElement selectAvailability(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementClick(instockOption, driver);
 		return instockOption;
 	}
 
-	public WebElement sleeveBtn() {
+	public WebElement sleeveBtn(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElement(sleeve, driver);
 		return sleeve;
 	}
 
-	public void clickOnProduct() {
-		firstProduct.click();
+	public void clickOnProduct(int index, WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		WebElement product = driver.findElement(By.xpath("(//div[@id='facet-main']//product-item[@class='product-item  hhh Byee'])["
+				+ index + "]//div[@class='title-wish']/a"));
+		webDriverUtilities.scrollToElement(product, driver);
+		webDriverUtilities.waitElement(product, driver);
+		product.click();
+//		WebElement ele = productsList.get(index - 1);
+//		webDriverUtilities.waitElement(ele, driver);
+//		ele.click();
 	}
 
 	public String getTitleProductsPage(WebDriver driver) {
 		return driver.getTitle();
 	}
 
-	public WebElement selectMenSize() {
+	public WebElement selectMenSize(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementClick(menSize, driver);
 		return menSize;
 	}
 
-	public WebElement getBrandElement() {
+	public WebElement getBrandElement(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementClick(brand, driver);
 		return brand;
 	}
 
-	public WebElement selectBrandRockit() {
+	public WebElement selectBrandRockit(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementRefreshed(brandOptionRockIt, driver);
 		return brandOptionRockIt;
 	}
 
-	public WebElement fullSleeveOption() {
+	public WebElement fullSleeveOption(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementClick(fullSleeveOption, driver);
 		return fullSleeveOption;
 	}
 
-	public WebElement clickThirdProduct() {
-		  return thirdProdut;
+	public void clickSortBybtn(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementClick(sortByBtn, driver);
+		sortByBtn.click();
+	}
+
+	public void clickHighToLow(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElement(highToLow, driver);
+		highToLow.click();
+	}
+
+	public List<WebElement> getProductToWishList(List<WebElement> list, WebDriverUtilities webDriverUtilities,
+			WebDriver driver) {
+		webDriverUtilities.waitElementRefreshed(addToWishList, driver);
+		return addToWishList;
+	}
+
+	public void clickWishListProduct(int index) {
+		addToWishList.get(1).click();
 	}
 }

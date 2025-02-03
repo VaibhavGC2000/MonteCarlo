@@ -1,6 +1,7 @@
 package testscripts;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -8,9 +9,11 @@ import java.util.List;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import genericLibraries.BaseClass;
+import genericLibraries.WebDriverUtilities;
 import io.opentelemetry.semconv.SemanticAttributes.FaasTriggerValues;
 import pom.AccountPage;
 import pom.AddressDrawer;
@@ -34,7 +37,8 @@ public class TC06_AddAddress extends BaseClass {
 
 		accountPage.clickAddressBtn();
 		AddressPage addressPage = new AddressPage(driver);
-//		addressPage.clickAddNewAddressBtn();
+		WebElement addAddressBtn = addressPage.getAddNewAddressBtn(webDriverUtilities, driver);
+		addAddressBtn.click();
 
 		AddressDrawer addressDrawer = new AddressDrawer(driver);
 
@@ -42,25 +46,28 @@ public class TC06_AddAddress extends BaseClass {
 		String lName = datautilities.readDataPropertyFile("lastName");
 		String companyName = datautilities.readDataPropertyFile("companyName");
 		String phoneNo = datautilities.readDataPropertyFile("phoneNum");
-		String adddressOne = datautilities.readDataPropertyFile("add1");
-		String adddressTwo = datautilities.readDataPropertyFile("add2");
-		String cityName = datautilities.readDataPropertyFile("cityName");
+		String addressOne = datautilities.readDataPropertyFile("add1");
+		String addressTwo = datautilities.readDataPropertyFile("add2");
 		String zipcode = datautilities.readDataPropertyFile("zipCode");
+		String cityName = datautilities.readDataPropertyFile("cityName");
 
-//		addressDrawer.enterFirstName(fname);
-//		addressDrawer.enterLastName(lName);
-//		addressDrawer.enterCompany(companyName);
-//		addressDrawer.enterPhone(phoneNo);
-//		addressDrawer.enterAddressOne(adddressOne);
-//		addressDrawer.enterAddressTwo(adddressTwo);
-//		addressDrawer.enterCity(cityName);
-//		addressDrawer.enterZip(zipcode);
-
-//		addressDrawer.clickAddAddressBtn();
+		addressDrawer.enterFirstName(fname);
+		addressDrawer.enterLastName(lName);
+		addressDrawer.enterCompany(companyName);
+		addressDrawer.enterPhone(phoneNo);
+		addressDrawer.enterAddressOne(addressOne);
+		addressDrawer.enterAddressTwo(addressTwo);
+		addressDrawer.enterZip(zipcode);
+		addressDrawer.enterCity(cityName);
+		addressDrawer.clickAddAddressBtn();
 
 		List<WebElement> allAddressText = addressPage.getAllAddressesTextsElements();
 		String addressText = allAddressText.get(0).getText();
 		String[] lines = addressText.split("\n");
 		System.out.println(Arrays.toString(lines));
+
+//		Assert.assertTrue(isAddressMatch(fname, lName, companyName, phoneNo, addressOne, addressTwo, zipcode, cityName,
+//				addressPage));
+
 	}
 }

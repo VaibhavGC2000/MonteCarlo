@@ -20,7 +20,7 @@ import pom.ProductDetailsPage;
 import pom.SearchDrawer;
 import pom.SearchedProductsPage;
 
-public class TC04_Checkout extends BaseClass {
+public class TC04_Checkout extends BaseClass { 
 	@Test
 	public void addToCartAndCheckout() throws EncryptedDocumentException, IOException, InterruptedException {
 		Header header = new Header(driver);

@@ -1,14 +1,15 @@
 package genericLibraries;
-import java.sql.Driver;
+
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
-
-import javax.print.attribute.standard.JobHoldUntil;
+import java.util.function.Function;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -16,6 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 
 public class WebDriverUtilities {
 
@@ -77,7 +79,7 @@ public class WebDriverUtilities {
 
 	public void scrollToElement(WebElement element, WebDriver driver) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-		jsExecutor.executeScript("arguments[0].scrollIntoView();", element);
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
 	}
 
 	public void switchChildWindow(WebDriver driver) {
@@ -104,8 +106,26 @@ public class WebDriverUtilities {
 		wait.until(ExpectedConditions.visibilityOf(ele));
 	}
 
+	public void waitElements(List<WebElement> list, WebDriver driver) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOfAllElements(list));
+	}
+
 	public void waitElementClick(WebElement ele, WebDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(ele));
 	}
+
+	public void waitElementRefreshed(WebElement ele, WebDriver driver) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(ele)));
+	}
+	
+	public void waitElementRefreshed(List<WebElement> list, WebDriver driver) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOfAllElements(list)));
+	}
+	
+	
+
 }

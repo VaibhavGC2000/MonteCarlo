@@ -39,10 +39,10 @@ public class QuickBuyDrawer {
 			@Nullable
 			String sizeOption = parentElement.getDomAttribute("class");
 			System.out.println(sizeOption);
-//			if (!sizeOption.contains("is-Disabled")) {
-//				size.click();
-//				break;
-//			}
+			if (!sizeOption.contains("is-Disabled")) {
+				size.click();
+				break;
+			}
 		}
 	}
 

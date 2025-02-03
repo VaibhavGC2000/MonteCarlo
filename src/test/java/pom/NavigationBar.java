@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import genericLibraries.WebDriverUtilities;
+
 public class NavigationBar {
 
 	@FindBy(xpath = "//li[@data-item-title=\"HOME FURNISHING\"]")
@@ -27,27 +29,30 @@ public class NavigationBar {
 
 	@FindBy(xpath = "//span[contains(text(), 'Wishlist')]")
 	private WebElement addToWishListIcon;
-	
+
 	@FindBy(xpath = "(//a[contains(@class,'header__icon-wrapper')])[1]")
-	private	WebElement searchBox;
+	private WebElement searchBox;
 
 	public NavigationBar(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
-	public WebElement hoverOnHomeFurniture() {
+	public WebElement getOnHomeFurniture() {
 		return homeFurninshing;
 	}
 
-	public WebElement menSection() {
+	public WebElement menSection(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementClick(menSection, driver);
 		return menSection;
 	}
 
-	public void clickAcComforts() {
+	public void clickAcComforts(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementClick(acComforts, driver);
 		acComforts.click();
 	}
 
-	public void clickRoundNeckSweaters() {
+	public void clickRoundNeckSweaters(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElement(roundNeckSweaters, driver);
 		roundNeckSweaters.click();
 	}
 
@@ -62,7 +67,7 @@ public class NavigationBar {
 	public void clickOnWomenSection() {
 		womenSection.click();
 	}
-	
+
 	public void clickOnSearchBox() {
 		searchBox.click();
 	}

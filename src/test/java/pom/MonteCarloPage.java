@@ -55,7 +55,8 @@ public class MonteCarloPage {
 		return allNewArrivalProducts;
 	}
 
-	public WebElement getNewArrivalProductElement(int index) {
+	public WebElement getNewArrivalProductElement(int index, WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElements(allNewArrivalProducts, driver);
 		return allNewArrivalProducts.get(index);
 	}
 
@@ -68,7 +69,7 @@ public class MonteCarloPage {
 	}
 
 	public void hoverAndClickNewArrivalProduct(int index, WebDriver driver, WebDriverUtilities webDriverUtilities) {
-		WebElement product = getNewArrivalProductElement(index);
+		WebElement product = getNewArrivalProductElement(index, webDriverUtilities, driver);
 		webDriverUtilities.mouseHover(product, driver);
 		newAllArrivalProductQuickViewListBtn.get(index).click();
 	}

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import genericLibraries.WebDriverUtilities;
+
 public class CartDrawer {
 
 	@FindBy(xpath = "//cart-drawer[@id='mini-cart']/descendant::p[.='Your cart is empty']")
@@ -44,8 +46,9 @@ public class CartDrawer {
 		startShopping.click();
 	}
 
-	public void clickAddOrderNote() {
-		addOrderNote.click();
+	public WebElement getAddOrderNote(WebDriverUtilities webDriverUtilities,WebDriver driver) {
+		webDriverUtilities.waitElementClick(addOrderNote, driver);
+		return addOrderNote;
 	}
 
 	public void enterTextOrderNote(String note) {

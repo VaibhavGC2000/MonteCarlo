@@ -15,7 +15,7 @@ public class DataUtilities {
 		properties.load(new FileInputStream(AutoConstant.propertiesFilePath));
 		return properties.getProperty(data);
 	}
-
+ 
 	public String readDataExcelFile(String sheetName, int rowNumber, int cellNumber)
 			throws EncryptedDocumentException, IOException {
 		FileInputStream fis = new FileInputStream(AutoConstant.excelShettPath);

@@ -13,15 +13,7 @@ public class Listener implements ITestListener {
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		TakesScreenshot screenshot = (TakesScreenshot) BaseClass.driver;
-		File src = screenshot.getScreenshotAs(OutputType.FILE);
-		File dest = new File(AutoConstant.photoPath + result.getMethod() + ".png");
-		try {
-			FileUtils.copyFile(src, dest);
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
+		
 
 	}
 

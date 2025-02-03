@@ -3,20 +3,6 @@
 <suite name="Failed suite [Failed suite [Suite]]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)(failed)">
     <classes>
-      <class name="testscripts.TC01_AddProductToCart">
-        <methods>
-          <include name="openApp"/>
-          <include name="closeApp"/>
-          <include name="addToCart"/>
-        </methods>
-      </class> <!-- testscripts.TC01_AddProductToCart -->
-      <class name="testscripts.TC03_PincodeDelivery">
-        <methods>
-          <include name="openApp"/>
-          <include name="checkPincodeAndDelivery"/>
-          <include name="closeApp"/>
-        </methods>
-      </class> <!-- testscripts.TC03_PincodeDelivery -->
       <class name="testscripts.TC10_ProductVerification">
         <methods>
           <include name="verifyProduct"/>
@@ -24,20 +10,13 @@
           <include name="closeApp"/>
         </methods>
       </class> <!-- testscripts.TC10_ProductVerification -->
-      <class name="testscripts.TC08_VerifyPopup">
+      <class name="testscripts.TC05_manufactureAddress">
         <methods>
           <include name="openApp"/>
           <include name="closeApp"/>
-          <include name="addToWishList"/>
+          <include name="getManufactureAddress"/>
         </methods>
-      </class> <!-- testscripts.TC08_VerifyPopup -->
-      <class name="testscripts.TC02_AddProductToWishlist">
-        <methods>
-          <include name="openApp"/>
-          <include name="closeApp"/>
-          <include name="addToWishlist"/>
-        </methods>
-      </class> <!-- testscripts.TC02_AddProductToWishlist -->
+      </class> <!-- testscripts.TC05_manufactureAddress -->
     </classes>
   </test> <!-- Test(failed)(failed) -->
 </suite> <!-- Failed suite [Failed suite [Suite]] -->

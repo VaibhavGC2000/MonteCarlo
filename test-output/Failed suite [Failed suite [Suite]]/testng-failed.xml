@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Failed suite [Failed suite [Suite]]]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)(failed)(failed)">
+    <classes>
+      <class name="testscripts.TC05_manufactureAddress">
+        <methods>
+          <include name="openApp"/>
+          <include name="closeApp"/>
+          <include name="getManufactureAddress"/>
+        </methods>
+      </class> <!-- testscripts.TC05_manufactureAddress -->
+      <class name="testscripts.TC10_ProductVerification">
+        <methods>
+          <include name="verifyProduct"/>
+          <include name="openApp"/>
+          <include name="closeApp"/>
+        </methods>
+      </class> <!-- testscripts.TC10_ProductVerification -->
+    </classes>
+  </test> <!-- Test(failed)(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Failed suite [Suite]]] -->

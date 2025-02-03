@@ -15,7 +15,7 @@ public class AddressPage {
 	private List<WebElement> totalAddressesList;
 
 	@FindBy(xpath = "//div[@class=\"account__addresses-list\"]//*[normalize-space()='Add a new address']")
-	private WebElement clickAddNewAddressBtn;
+	private WebElement addNewAddressBtn;
 
 	@FindBy(xpath = "//div[@class='page-content']//p")
 	private List<WebElement> allAddressesTextsElements;
@@ -33,8 +33,9 @@ public class AddressPage {
 		return totalAddressesList;
 	}
 
-	public void clickAddNewAddressBtn() {
-		clickAddNewAddressBtn.click();
+	public WebElement getAddNewAddressBtn(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElement(addNewAddressBtn, driver);
+		return addNewAddressBtn;
 	}
 
 	public List<WebElement> getAllAddressesTextsElements() {

@@ -76,8 +76,9 @@ public class ProductDetailsPage {
 		addToCartBtn.click();
 	}
 
-	public WebElement manufactureAddress() {
-		return manuFactureAddress;
+	public String manufactureAddress(WebDriverUtilities webDriverUtilities,WebDriver driver) {
+		webDriverUtilities.waitElement(manuFactureAddress, driver);
+		return manuFactureAddress.getText();
 	}
 
 	public void enterPincode(String pincode) {

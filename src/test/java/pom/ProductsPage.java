@@ -51,7 +51,6 @@ public class ProductsPage {
 	@FindBy(xpath = "(//div[@class='title-wish'])")
 	private List<WebElement> productsList;
 
-
 	@FindBy(xpath = "//button[@class='popover-button hidden-pocket']")
 	private WebElement sortByBtn;
 
@@ -65,60 +64,60 @@ public class ProductsPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public WebElement getSize(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+	public void getSize(WebDriverUtilities webDriverUtilities, WebDriver driver) {
 		webDriverUtilities.waitElement(size, driver);
-		return size;
+		size.click();
 	}
 
-	public WebElement selectSize(WebDriverUtilities webDriverUtilities, WebDriver driver) {
-		webDriverUtilities.waitElementClick(sizeOption, driver);
-		return sizeOption;
+	public void selectSize(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementRefreshed(sizeOption, driver);
+		sizeOption.click();
 	}
 
-	public WebElement getColor(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+	public void getColor(WebDriverUtilities webDriverUtilities, WebDriver driver) {
 		webDriverUtilities.waitElementRefreshed(color, driver);
-		return color;
+		color.click();
 	}
 
-	public WebElement selectColor(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+	public void selectColor(WebDriverUtilities webDriverUtilities, WebDriver driver) {
 		webDriverUtilities.waitElementRefreshed(colorOption, driver);
-		return colorOption;
+		colorOption.click();
+		;
 	}
 
 	public void clickBrand(WebDriverUtilities webDriverUtilities, WebDriver driver) {
-		webDriverUtilities.waitElement(brand, driver);
+		webDriverUtilities.waitElementRefreshed(brand, driver);
 		brand.click();
 	}
 
-	public WebElement selectBrand(WebDriverUtilities webDriverUtilities, WebDriver driver) {
-		webDriverUtilities.waitElementClick(brandOption, driver);
-		return brandOption;
+	public void selectBrand(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementRefreshed(brandOption, driver);
+		brandOption.click();
 	}
 
-	public WebElement getAvailability(WebDriverUtilities webDriverUtilities, WebDriver driver) {
-		webDriverUtilities.waitElement(availability, driver);
-		return availability;
+	public void getAvailability(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementRefreshed(availability, driver);
+		availability.click();
+		;
 	}
 
-	public WebElement selectAvailability(WebDriverUtilities webDriverUtilities, WebDriver driver) {
-		webDriverUtilities.waitElementClick(instockOption, driver);
-		return instockOption;
+	public void selectAvailability(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementRefreshed(instockOption, driver);
+		instockOption.click();
 	}
 
-	public WebElement sleeveBtn(WebDriverUtilities webDriverUtilities, WebDriver driver) {
-		webDriverUtilities.waitElement(sleeve, driver);
-		return sleeve;
+	public void sleeveBtn(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElementRefreshed(sleeve, driver);
+		sleeve.click();
 	}
 
 	public void clickOnProduct(int index, WebDriverUtilities webDriverUtilities, WebDriver driver) {
-		WebElement product = driver.findElement(By.xpath("(//div[@id='facet-main']//product-item[@class='product-item  hhh Byee'])["
-				+ index + "]//div[@class='title-wish']/a"));
+		WebElement product = driver
+				.findElement(By.xpath("(//div[@id='facet-main']//product-item[@class='product-item  hhh Byee'])["
+						+ index + "]//div[@class='title-wish']/a"));
 		webDriverUtilities.scrollToElement(product, driver);
 		webDriverUtilities.waitElement(product, driver);
 		product.click();
-//		WebElement ele = productsList.get(index - 1);
-//		webDriverUtilities.waitElement(ele, driver);
-//		ele.click();
 	}
 
 	public String getTitleProductsPage(WebDriver driver) {

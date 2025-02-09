@@ -15,8 +15,8 @@ public class CartPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public WebElement getCartItem() {
-		return cartItem;
+	public String getCartItem() {
+		return cartItem.getText();
 	}
 
 	public String getTitleCartPage(WebDriver driver) {

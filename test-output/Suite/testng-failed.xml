@@ -3,27 +3,20 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testscripts.TC09_AddToWishlistAndCart">
+      <class name="testscripts.TC04_InitiateCheckout">
         <methods>
-          <include name="openApp"/>
-          <include name="closeApp"/>
-          <include name="addToCart"/>
-        </methods>
-      </class> <!-- testscripts.TC09_AddToWishlistAndCart -->
-      <class name="testscripts.TC04_Checkout">
-        <methods>
-          <include name="openApp"/>
           <include name="addToCartAndCheckout"/>
-          <include name="closeApp"/>
-        </methods>
-      </class> <!-- testscripts.TC04_Checkout -->
-      <class name="testscripts.TC05_manufactureAddress">
-        <methods>
           <include name="openApp"/>
           <include name="closeApp"/>
-          <include name="getManufactureAddress"/>
         </methods>
-      </class> <!-- testscripts.TC05_manufactureAddress -->
+      </class> <!-- testscripts.TC04_InitiateCheckout -->
+      <class name="testscripts.TC08_ResetFilterAddToWishlist">
+        <methods>
+          <include name="addToWishList"/>
+          <include name="openApp"/>
+          <include name="closeApp"/>
+        </methods>
+      </class> <!-- testscripts.TC08_ResetFilterAddToWishlist -->
       <class name="testscripts.TC10_ProductVerification">
         <methods>
           <include name="verifyProduct"/>
@@ -31,6 +24,20 @@
           <include name="closeApp"/>
         </methods>
       </class> <!-- testscripts.TC10_ProductVerification -->
+      <class name="testscripts.TC03_VerifyPincode">
+        <methods>
+          <include name="checkPincodeAndDelivery"/>
+          <include name="openApp"/>
+          <include name="closeApp"/>
+        </methods>
+      </class> <!-- testscripts.TC03_VerifyPincode -->
+      <class name="testscripts.TC09_AddToWishlistAndCart">
+        <methods>
+          <include name="openApp"/>
+          <include name="closeApp"/>
+          <include name="addToCart"/>
+        </methods>
+      </class> <!-- testscripts.TC09_AddToWishlistAndCart -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

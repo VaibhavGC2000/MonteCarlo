@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testscripts.TC01_AddProductToCart">
+      <class name="testscripts.TC10_ProductVerification">
         <methods>
+          <include name="verifyProduct"/>
           <include name="openApp"/>
-          <include name="addToCart"/>
+          <include name="closeApp"/>
         </methods>
-      </class> <!-- testscripts.TC01_AddProductToCart -->
+      </class> <!-- testscripts.TC10_ProductVerification -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

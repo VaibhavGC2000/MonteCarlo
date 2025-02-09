@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import genericLibraries.WebDriverUtilities;
+
 public class WishListPage {
 	@FindBy(xpath = "//div[contains(@class,'flits-box-card')]//div[contains(@class,'flits-product-item-card')]//p[contains(@class,'flits-product-name')]")
 	private WebElement wishListedItem;
@@ -27,8 +29,9 @@ public class WishListPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public WebElement getWishlistedProduct() {
-		return wishListedItem;
+	public String getWishlistedProduct(WebDriverUtilities webDriverUtilities, WebDriver driver) {
+		webDriverUtilities.waitElement(wishListedItem, driver);
+		return wishListedItem.getText();
 	}
 
 	public void addToCart() {

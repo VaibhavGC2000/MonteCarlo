@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -16,70 +17,71 @@ import pom.NavigationBar;
 import pom.ProductDetailsPage;
 import pom.ProductsPage;
 
-//10.Click on size filter
-//11.Select 38 / M(94)
-//12.Scroll down & Click on Brand filter
-//13.Select the checkbox of Rock.it
-//14.Scroll down & Click on sleeve filter
-//15.Select the checkbox of Full Sleeve
-//16.Select the third product
-//17.Scroll & Enter the pincode in Check Pincode TextBox
-//18.Click on Check pincode
-//19.Close the window
 
-public class TC03_PincodeDelivery extends BaseClass {
+public class TC03_VerifyPincode extends BaseClass {
 	@Test
 	public void checkPincodeAndDelivery() throws EncryptedDocumentException, IOException, InterruptedException {
+		logger = LogManager.getLogger(TC03_VerifyPincode.class);
 		// 1.Open the browser
 		// 2.Maximize the browser
 		// 3.Enter the URL
 		Header header = new Header(driver);
 		// 4.Click Login/Signup
 		header.clickLoginSignInButton();
-
+		logger.info("clicked on login button");
 		LoginPage loginPage = new LoginPage(driver);
 		// 5.Enter Username and password
 		loginPage.enterEmail(datautilities.readDataExcelFile("Sheet1", 1, 0));
+		logger.info("entered email");
 		loginPage.enterPassword(datautilities.readDataExcelFile("Sheet1", 1, 1));
+		logger.info("enterd password");
 		// 6.Click Login
 		loginPage.clickLoginBtn();
-
+		logger.info("clicked o login button");
 		AccountPage accountPage = new AccountPage(driver);
 		String accountPageTitle = accountPage.getTitleAccount(driver);
 		// 7.Verify the Account page
-//		assertEquals(accountPageTitle, datautilities.readDataPropertyFile("accountPageTitle"));
+		assertEquals(accountPageTitle, datautilities.readDataPropertyFile("accountPageTitle"));
+		logger.info("on account page verified");
 
 		NavigationBar navigationBar = new NavigationBar(driver);
 		WebElement mens = navigationBar.menSection(webDriverUtilities, driver);
 		// 8.MouseOver on Mens section
 		webDriverUtilities.mouseHover(mens, driver);
-
+		logger.info("hovered on mens section");
 		// 9.Click on Round Neck Sweaters
 		navigationBar.clickRoundNeckSweaters(webDriverUtilities, driver);
-
+		logger.info("clicked on round necked sweaters");
 		ProductsPage productsPage = new ProductsPage(driver);
-		WebElement sizeBtn = productsPage.getSize(webDriverUtilities, driver);
-		sizeBtn.click();
+		productsPage.getSize(webDriverUtilities, driver);
+		logger.info("clicked on size button");
 
 		WebElement menSizeOption = productsPage.selectMenSize(webDriverUtilities, driver);
 		menSizeOption.click();
+		logger.info("men size option clicked");
 
 		productsPage.clickBrand(webDriverUtilities, driver);
+		logger.info("brand button clicked");
 
 		WebElement brandRockItOption = productsPage.selectBrandRockit(webDriverUtilities, driver);
 		brandRockItOption.click();
+		logger.info("brand option selected");
 
-		WebElement sleeveBtn = productsPage.sleeveBtn(webDriverUtilities, driver);
-		sleeveBtn.click();
+		productsPage.sleeveBtn(webDriverUtilities, driver);
+		logger.info("full sleeve button clicked");
 
 		WebElement fullSleeveOption = productsPage.fullSleeveOption(webDriverUtilities, driver);
 		fullSleeveOption.click();
+		logger.info("full sleeve option selected");
 
-		productsPage.clickOnProduct(3, webDriverUtilities, driver);
+		productsPage.clickOnProduct(1, webDriverUtilities, driver);
+		logger.info("clicked on first product");
 
 		ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
 		productDetailsPage.enterPincode(datautilities.readDataPropertyFile("zipCode"));
+		logger.info("pindoe entered successfully");
 		productDetailsPage.clickCheckPincodeBtn();
+		logger.info("clicked on pincode");
 
 	}
 }

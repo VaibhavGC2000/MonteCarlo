@@ -10,13 +10,6 @@
           <include name="closeApp"/>
         </methods>
       </class> <!-- testscripts.TC10_ProductVerification -->
-      <class name="testscripts.TC05_manufactureAddress">
-        <methods>
-          <include name="openApp"/>
-          <include name="closeApp"/>
-          <include name="getManufactureAddress"/>
-        </methods>
-      </class> <!-- testscripts.TC05_manufactureAddress -->
     </classes>
   </test> <!-- Test(failed)(failed) -->
 </suite> <!-- Failed suite [Failed suite [Suite]] -->

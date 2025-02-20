@@ -23,7 +23,6 @@ public class BaseClass {
 		driver = new EdgeDriver();
 		driver.manage().window().maximize();
 		driver.get(datautilities.readDataExcelFile("Sheet1", 2, 1));
-		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 

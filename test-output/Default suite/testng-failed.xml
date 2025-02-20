@@ -7,7 +7,6 @@
         <methods>
           <include name="verifyProduct"/>
           <include name="openApp"/>
-          <include name="closeApp"/>
         </methods>
       </class> <!-- testscripts.TC10_ProductVerification -->
     </classes>

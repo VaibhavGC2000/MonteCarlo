@@ -75,11 +75,6 @@ public class TC06_AddAddress extends BaseClass {
 		String[] lines = addressText.split("\n");
 		logger.info("Address Text: " + addressText);
 		logger.info("Address Lines: " + Arrays.toString(lines));
-//		if( Arrays.toString(lines).contains(lines))
-
-
-//		Assert.assertTrue(isAddressMatch(fname, lName, companyName, phoneNo, addressOne, addressTwo, zipcode, cityName,
-//				addressPage));
 
 	}
 }

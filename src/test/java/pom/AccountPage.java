@@ -12,7 +12,7 @@ public class AccountPage {
 	@FindBy(xpath = "//ul[@data-type='products']/li")
 	private List<WebElement> listOfProducts;
 
-	@FindBy(xpath = "//li[@class=\"block_link\"]//a[text()=\"Addresses\"]")
+	@FindBy(xpath = "//li[contains(@class,\"block_link\")]//a[text()=\"Addresses\"]")
 	private WebElement addressBtn;
 
 	public AccountPage(WebDriver driver) {

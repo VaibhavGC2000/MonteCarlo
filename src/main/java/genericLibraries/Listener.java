@@ -41,7 +41,6 @@ public class Listener implements ITestListener {
 		try {
 			FileUtils.copyFile(src, dest);
 		} catch (IOException e) {
-
 			e.printStackTrace();
 		}
 		test.fail(result.getMethod().getMethodName() + "Fail");

@@ -44,7 +44,6 @@ public class TC07_DeleteAddress extends BaseClass {
 
         AddressPage addressPage = new AddressPage(driver);
         addressPage.deleteDefaultAddress(addressPage, driver, webDriverUtilities);
-        logger.info("Deleted default address.");
-		
+        logger.info("Deleted default address.");	
 	}
 }

@@ -8,39 +8,100 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">27,531</td><td></td><td></td></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num attn">4</td><td class="num">380,922</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">testscripts.TC10_ProductVerification</td><td><a href="#m0">verifyProduct</a></td><td rowspan="1">1738822700502</td><td rowspan="1">3153</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">testscripts.TC01_AddProductToCart</td><td><a href="#m0">addToCart</a></td><td rowspan="1">1740074510077</td><td rowspan="1">20091</td></tr><tr class="failedodd"><td rowspan="1">testscripts.TC03_VerifyPincode</td><td><a href="#m1">checkPincodeAndDelivery</a></td><td rowspan="1">1740074734913</td><td rowspan="1">18760</td></tr><tr class="failedeven"><td rowspan="1">testscripts.TC08_ResetFilterAddToWishlist</td><td><a href="#m2">addToWishList</a></td><td rowspan="1">1740074579923</td><td rowspan="1">46378</td></tr><tr class="failedodd"><td rowspan="1">testscripts.TC10_ProductVerification</td><td><a href="#m3">verifyProduct</a></td><td rowspan="1">1740074811512</td><td rowspan="1">18836</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">testscripts.TC02_HandTowelProductAdding</td><td><a href="#m4">addToWishlist</a></td><td rowspan="1">1740074767126</td><td rowspan="1">27150</td></tr><tr class="passedodd"><td rowspan="1">testscripts.TC04_InitiateCheckout</td><td><a href="#m5">addToCartAndCheckout</a></td><td rowspan="1">1740074467579</td><td rowspan="1">26745</td></tr><tr class="passedeven"><td rowspan="1">testscripts.TC05_manufactureAddress</td><td><a href="#m6">getManufactureAddress</a></td><td rowspan="1">1740074639686</td><td rowspan="1">26559</td></tr><tr class="passedodd"><td rowspan="1">testscripts.TC06_AddAddress</td><td><a href="#m7">addAddress</a></td><td rowspan="1">1740074544253</td><td rowspan="1">21572</td></tr><tr class="passedeven"><td rowspan="1">testscripts.TC07_DeleteAddress</td><td><a href="#m8">deleteAddress</a></td><td rowspan="1">1740074679402</td><td rowspan="1">12334</td></tr><tr class="passedodd"><td rowspan="1">testscripts.TC09_AddToWishlistAndCart</td><td><a href="#m9">addToCart</a></td><td rowspan="1">1740074704214</td><td rowspan="1">17237</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">testscripts.TC10_ProductVerification#verifyProduct</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.apache.logging.log4j.Logger.info(String)&quot; because &quot;testscripts.TC10_ProductVerification.logger&quot; is null
-	at testscripts.TC10_ProductVerification.verifyProduct(TC10_ProductVerification.java:26)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+<h2>Test</h2><h3 id="m0">testscripts.TC01_AddProductToCart#addToCart</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[EdgeDriver: MicrosoftEdge on windows (703e92773e3d8a59c8dbddae3ae060d2)] -&gt; xpath: //li[@class=&quot;linklist__item&quot;]/a[contains(text(),&apos;AC Comforter&apos;)]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 133.0.3065.69, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62786}, msedge: {msedgedriverVersion: 133.0.3065.69 (c3f010c11f3e..., userDataDir: C:\Users\VC114136\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62786/devtoo..., se:cdpVersion: 133.0.3065.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 703e92773e3d8a59c8dbddae3ae060d2
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at genericLibraries.WebDriverUtilities.waitElementClick(WebDriverUtilities.java:116)
+	at pom.NavigationBar.clickAcComforts(NavigationBar.java:50)
+	at testscripts.TC01_AddProductToCart.addToCart(TC01_AddProductToCart.java:50)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">testscripts.TC03_VerifyPincode#checkPincodeAndDelivery</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[EdgeDriver: MicrosoftEdge on windows (02f4d82ab3ab4ecc0e98bc1c973453d5)] -&gt; xpath: //li[@class=&quot;linklist__item&quot;]/a[contains(text(),&apos;Round Neck Sweaters&apos;)]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 133.0.3065.69, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:65359}, msedge: {msedgedriverVersion: 133.0.3065.69 (c3f010c11f3e..., userDataDir: C:\Users\VC114136\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65359/devtoo..., se:cdpVersion: 133.0.3065.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 02f4d82ab3ab4ecc0e98bc1c973453d5
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at genericLibraries.WebDriverUtilities.waitElement(WebDriverUtilities.java:106)
+	at pom.NavigationBar.clickRoundNeckSweaters(NavigationBar.java:55)
+	at testscripts.TC03_VerifyPincode.checkPincodeAndDelivery(TC03_VerifyPincode.java:53)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">testscripts.TC08_ResetFilterAddToWishlist#addToWishList</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //div[@class=&quot;product__info&quot;]//h1&apos; (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at genericLibraries.WebDriverUtilities.waitElement(WebDriverUtilities.java:106)
+	at pom.ProductDetailsPage.getProductInfo(ProductDetailsPage.java:58)
+	at testscripts.TC08_ResetFilterAddToWishlist.addToWishList(TC08_ResetFilterAddToWishlist.java:70)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&quot;product__info&quot;]//h1&quot;}
+  (Session info: MicrosoftEdge=133.0.3065.69)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [3365a1ea48738c4f662f0234bd09cbe1, findElement {value=//div[@class=&quot;product__info&quot;]//h1, using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 133.0.3065.69, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:63398}, msedge: {msedgedriverVersion: 133.0.3065.69 (c3f010c11f3e..., userDataDir: C:\Users\VC114136\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63398/devtoo..., se:cdpVersion: 133.0.3065.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3365a1ea48738c4f662f0234bd09cbe1
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy29.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 29 more
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">testscripts.TC10_ProductVerification#verifyProduct</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button is=&quot;toggle-button&quot; loader=&quot;&quot; aria-controls=&quot;product-template--24170044358944__featured-collections-4e24c60f-584d-4966-a5a9-c2a7f5362b3f-8790724116768-drawer&quot; aria-expanded=&quot;false&quot; class=&quot;button button--outline button--text button--full  hidden-touch hidden-phone&quot;&gt;...&lt;/button&gt; is not clickable at point (485, 516). Other element would receive the click: &lt;img src=&quot;//www.montecarlo.in/cdn/shop/products/223061535-1-38_5.jpg?v=1697896077&amp;amp;width=1080&quot; alt=&quot;Men Grey Solid Stand Collar Full Sleeve Tracksuits&quot; srcset=&quot;//www.montecarlo.in/cdn/shop/products/223061535-1-38_5.jpg?v=1697896077&amp;amp;width=200 200w, //www.montecarlo.in/cdn/shop/products/223061535-1-38_5.jpg?v=1697896077&amp;amp;width=300 300w, //www.montecarlo.in/cdn/shop/products/223061535-1-38_5.jpg?v=1697896077&amp;amp;width=400 400w, //www.montecarlo.in/cdn/shop/products/223061535-1-38_5.jpg?v=1697896077&amp;amp;width=500 500w, //www.montecarlo.in/cdn/shop/products/223061535-1-38_5.jpg?v=1697896077&amp;amp;width=600 600w, //www.montecarlo.in/cdn/shop/products/223061535-1-38_5.jpg?v=1697896077&amp;amp;width=700 700w, //www.montecarlo.in/cdn/shop/products/223061535-1-38_5.jpg?v=1697896077&amp;amp;width=800 800w, //www.montecarlo.in/cdn/shop/products/223061535-1-38_5.jpg?v=1697896077&amp;amp;width=900 900w, //www.montecarlo.in/cdn/shop/products/223061535-1-38_5.jpg?v=1697896077&amp;amp;width=1000 1000w&quot; width=&quot;1080&quot; height=&quot;1440&quot; loading=&quot;lazy&quot; sizes=&quot;(max-width: 740px) 52vw, calc(min(100vw - 80px, 1520px) / 4 - 18px)&quot; class=&quot;product-item__primary-image&quot; data-media-id=&quot;35575659757856&quot;&gt;
+  (Session info: MicrosoftEdge=133.0.3065.69)
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [5e6f4a03c71cd144002bee076e1aa16f, clickElement {id=f.7AA258A12D970844DF483242E4247527.d.434456DD5632ED331171349DF25E247C.e.369}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 133.0.3065.69, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:49907}, msedge: {msedgedriverVersion: 133.0.3065.69 (c3f010c11f3e..., userDataDir: C:\Users\VC114136\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49907/devtoo..., se:cdpVersion: 133.0.3065.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (5e6f4a03c71cd144002bee076e1aa16f)] -&gt; xpath: *//product-list[2]//product-item/div[2]/div[1]/button[1]]
+Session ID: 5e6f4a03c71cd144002bee076e1aa16f
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at pom.MonteCarloPage.hoverAndClickNewArrivalProduct(MonteCarloPage.java:74)
+	at testscripts.TC10_ProductVerification.verifyProduct(TC10_ProductVerification.java:77)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">testscripts.TC02_HandTowelProductAdding#addToWishlist</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">testscripts.TC04_InitiateCheckout#addToCartAndCheckout</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">testscripts.TC05_manufactureAddress#getManufactureAddress</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">testscripts.TC06_AddAddress#addAddress</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">testscripts.TC07_DeleteAddress#deleteAddress</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">testscripts.TC09_AddToWishlistAndCart#addToCart</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

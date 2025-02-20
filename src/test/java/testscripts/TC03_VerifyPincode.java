@@ -31,13 +31,13 @@ public class TC03_VerifyPincode extends BaseClass {
 		logger.info("clicked on login button");
 		LoginPage loginPage = new LoginPage(driver);
 		// 5.Enter Username and password
-		loginPage.enterEmail(datautilities.readDataExcelFile("Sheet1", 1, 0));
+		loginPage.enterEmail(datautilities.readDataExcelFile("Sheet1", 0, 1));
 		logger.info("entered email");
 		loginPage.enterPassword(datautilities.readDataExcelFile("Sheet1", 1, 1));
-		logger.info("enterd password");
+		logger.info("entered password");
 		// 6.Click Login
 		loginPage.clickLoginBtn();
-		logger.info("clicked o login button");
+		logger.info("clicked on login button");
 		AccountPage accountPage = new AccountPage(driver);
 		String accountPageTitle = accountPage.getTitleAccount(driver);
 		// 7.Verify the Account page
